@@ -58,4 +58,21 @@ public class CalculadoraDescuentos {
             }
             return n;
         }
+        static double calcularPrecioTotal(double[] precios, int[] cantidades, int n) {
+    double total = 0;
+    for (int i = 0; i < n; i++) {
+        total += precios[i] * cantidades[i];
+    }
+    return total;
+}
+
+static int calcularCantidadTotal(int[] cantidades, int n) {
+    int total = 0;
+    for (int i = 0; i < n; i++) {
+        total += cantidades[i];
+    }
+    return total;
+}
+
         
+

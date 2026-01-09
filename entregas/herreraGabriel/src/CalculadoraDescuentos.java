@@ -99,7 +99,22 @@ public class CalculadoraDescuentos {
         
             return PRECIO_FINAL;
         }
+        static void imprimirResumen(double original, double finalPrecio, int cantidad) {
+            System.out.println("Resumen de Compra");
+            System.out.println("Precio original total: " + original + " euros");
+            System.out.println("Numero total de productos: " + cantidad);
+            System.out.println("Precio final con descuento: " + finalPrecio + " euros");
         
+            double ahorro = original - finalPrecio;
+            System.out.println("Ahorro total: " + ahorro + " euros");
+        
+            if (original > 0) {
+                System.out.println("Porcentaje de ahorro: " + (ahorro / original * 100) + "%");
+            }
+        }
+        
+        
+
 
 
 

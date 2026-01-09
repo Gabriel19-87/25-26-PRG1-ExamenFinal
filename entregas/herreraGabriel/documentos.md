@@ -1,0 +1,11 @@
+Dejo aqui el mini resumen de lo que hice en todo el codigo para hacer la reestructurar de la calculadora de descuentos con codigo limpio
+- Reorganise el programa para que main solo controle el flujo general
+- Se separo la lógica en métodos estáticos con responsabilidades claras para cada accion
+- Se extrajo la lectura del carrito de compra a un método independiente
+- Se creo métodos específicos para:
+  - cálculo del precio total
+  - cálculo del número total de productos
+  - aplicación de descuentos
+  - impresión del resumen de compra
+- Se mejoro la legibilidad y mantenibilidad del código
+- La estructura final sigue el mismo estilo modular y ordenado como se ha visto en clase

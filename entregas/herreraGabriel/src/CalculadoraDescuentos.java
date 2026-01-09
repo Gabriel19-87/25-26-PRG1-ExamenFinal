@@ -14,7 +14,7 @@ public class CalculadoraDescuentos {
     
         System.out.println("Saliendo del sistema.");
     }
-    
+
     static int mostrarMenu() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Calculadora de Descuentos - Tienda Online");
@@ -34,3 +34,28 @@ public class CalculadoraDescuentos {
             System.out.println("Carrito vacio.");
             return;
         }
+        
+        static int leerCarrito(String[] nombres, double[] precios, int[] cantidades) {
+            Scanner sc = new Scanner(System.in);
+            int n = 0;
+        
+            System.out.println("Carrito de Compra");
+            while (n < nombres.length) {
+                System.out.print("Nombre del producto (o 'fin' para terminar): ");
+                String nombre = sc.nextLine();
+                if (nombre.equalsIgnoreCase("fin")) break;
+        
+                nombres[n] = nombre;
+        
+                System.out.print("Precio de '" + nombre + "': ");
+                precios[n] = sc.nextDouble();
+        
+                System.out.print("Cantidad de '" + nombre + "': ");
+                cantidades[n] = sc.nextInt();
+                sc.nextLine();
+        
+                n++;
+            }
+            return n;
+        }
+        

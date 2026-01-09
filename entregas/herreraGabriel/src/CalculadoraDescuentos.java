@@ -58,21 +58,48 @@ public class CalculadoraDescuentos {
             }
             return n;
         }
+
         static double calcularPrecioTotal(double[] precios, int[] cantidades, int n) {
-    double total = 0;
-    for (int i = 0; i < n; i++) {
-        total += precios[i] * cantidades[i];
-    }
-    return total;
-}
-
-static int calcularCantidadTotal(int[] cantidades, int n) {
-    int total = 0;
-    for (int i = 0; i < n; i++) {
-        total += cantidades[i];
-    }
-    return total;
-}
-
+            double total = 0;
+            for (int i = 0; i < n; i++) {
+                total += precios[i] * cantidades[i];
+            }
+            return total;
+        }
         
+        static int calcularCantidadTotal(int[] cantidades, int n) {
+            int total = 0;
+            for (int i = 0; i < n; i++) {
+                total += cantidades[i];
+            }
+            return total;
+        }
+        
+        static double aplicarDescuentos(double precio, int tipo, boolean rebajas, int cantidad) {
+            double PRECIO_FINAL = precio;
+        
+            if (tipo == 1) {
+                if (rebajas) PRECIO_FINAL *= 0.90;
+                if (cantidad >= 5) PRECIO_FINAL *= 0.95;
+            } else if (tipo == 2) {
+                PRECIO_FINAL *= 0.85;
+                if (rebajas) PRECIO_FINAL *= 0.90;
+                if (cantidad >= 3) PRECIO_FINAL *= 0.92;
+            } else if (tipo == 3) {
+                PRECIO_FINAL *= 0.80;
+                if (rebajas) PRECIO_FINAL *= 0.85;
+                if (cantidad >= 2) PRECIO_FINAL *= 0.90;
+            } else if (tipo == 4) {
+                PRECIO_FINAL *= 0.70;
+                if (rebajas) PRECIO_FINAL *= 0.80;
+                PRECIO_FINAL *= 0.85;
+            }
+        
+            if (PRECIO_FINAL > 500) PRECIO_FINAL -= 50;
+        
+            return PRECIO_FINAL;
+        }
+        
+
+
 
